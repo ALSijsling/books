@@ -18,6 +18,7 @@
         "checkJs": true,
         "jsx": "preserve",
         "resolveJsonModule": true,
+        "allowImportingTsExtensions": true,
     },
     "include": ["resources/js/**/*"]
 }
