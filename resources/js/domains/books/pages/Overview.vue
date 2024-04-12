@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import { getAllBooks, fetchAllBooks } from './../store.ts'
     import { ref, onMounted } from 'vue';
+    import { getAllBooks, fetchAllBooks } from './../store.ts';
     import { Book } from './../types';
 
     const books = ref<Array<Book>>([]);
@@ -12,10 +12,13 @@
 </script>
 
 <template>
-    <ul>
-        <li v-for="book in books" :key="book.id">
-            {{ book.title }}
-            {{ book.author.name }}
-        </li>
-    </ul>
+    <div class="w-2/3 mx-auto my-10">
+        <div class="grid grid-cols-6 gap-12">
+            <div v-for="book in books" :key="book.id">
+                <img src="/public/Book_image.png" />
+                <p class="my-4 font-bold text-center">{{ book.title }}</p>
+                <p>{{ book.author.name }}</p>
+            </div>
+        </div>
+    </div>
 </template>
