@@ -16,3 +16,7 @@ export const fetchAllBooks = async() => {
     if (!data) return;
     return books.value = data;
 }
+
+export const addBook = (book: Book) => {
+    const {} = axios.post('api/books', book);
+};
