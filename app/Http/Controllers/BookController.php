@@ -14,6 +14,12 @@ class BookController extends Controller
         return response()->json($books);
     }
 
+    public function show(Request $book)
+    {
+        $book = Book::where('id', $book['id'])->with('author')->get();
+        return response()->json($book[0]);
+    }
+
     public function store(Request $request)
     {
         $attributes['author_id'] = $request[1]['author'];

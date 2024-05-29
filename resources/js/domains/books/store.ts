@@ -7,16 +7,26 @@ const books = ref<Array<Book>>([]);
 
 //Getters
 export const getAllBooks = () => {
-    return books.value
+    return books.value;
+}
+
+export const getBookById = () => {
+    return books.value;
 }
 
 //Actions
 export const fetchAllBooks = async() => {
-    const {data} = await axios.get('api/books');
+    const {data} = await axios.get('/api/books');
+    if (!data) return;
+    return books.value = data;
+}
+
+export const fetchBookById = async(id: number) => {
+    const {data} = await axios.get(`/api/books/${id}`);
     if (!data) return;
     return books.value = data;
 }
 
 export const addBook = (book: Book) => {
-    const {} = axios.post('api/books', book);
+    const {} = axios.post('/api/books', book);
 };
