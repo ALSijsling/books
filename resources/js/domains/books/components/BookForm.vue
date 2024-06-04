@@ -10,7 +10,7 @@
     const book = ref({...props.book});
     const authors = ref<Array<Author>>([]);
 
-    const selected = computed(() => book.value.author.id);
+    const selected = computed(() => book.value.author?.id);
 
     onMounted(async () => {
         await fetchAllAuthors();
