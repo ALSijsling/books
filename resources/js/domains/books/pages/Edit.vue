@@ -17,7 +17,6 @@
 
 <template>
     <div v-if="book">
-        <p>Current Book: {{ book.title }}</p>
         <BookForm @submitBook="(book) => updateBook(book)" :book="book" buttonValue="Update Book" />    
     </div>
 </template>

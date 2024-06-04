@@ -34,3 +34,7 @@ export const addBook = (book: Book) => {
 export const updateBook = (book: Book) => {
     const {} = axios.patch('/api/books', book);
 }
+
+export const deleteBook = (book: Book) => {
+    const {} = axios.delete('/api/books', {data: book})
+}

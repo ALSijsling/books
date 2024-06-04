@@ -39,4 +39,10 @@ class BookController extends Controller
 
         $book->save();
     }
+
+    public function destroy(Request $request)
+    {
+        $book = Book::find($request['id']);
+        $book->delete();
+    }
 }
