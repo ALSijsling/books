@@ -1,13 +1,13 @@
 import Home from './../domains/books/pages/Overview.vue';
-import Create from './../domains/books/pages/Create.vue';
-import Show from './../domains/books/pages/Show.vue';
-import Edit from './../domains/books/pages/Edit.vue';
+import CreateBook from './../domains/books/pages/Create.vue';
+import ShowBook from './../domains/books/pages/Show.vue';
+import EditBook from './../domains/books/pages/Edit.vue';
 
 const routes = [
     {path: '/', name: 'Home', component: Home},
-    {path: '/create', name: 'Create', component: Create},
-    {path: '/books/:id', name: 'Show', component: Show},
-    {path: '/books/:id/edit', name: 'Edit', component: Edit}
+    {path: '/create', name: 'CreateBook', component: CreateBook},
+    {path: '/books/:id', name: 'ShowBook', component: ShowBook},
+    {path: '/books/:id/edit', name: 'EditBook', component: EditBook}
 ];
 
 export default routes;

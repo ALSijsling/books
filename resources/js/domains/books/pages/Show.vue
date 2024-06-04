@@ -21,7 +21,7 @@
         <h1 class="my-4 font-bold text-xl">{{ book.title }}</h1>
         <h3 class="my-4 text-gray-500">{{ book.author.name }}</h3>
         <div class="inline-flex">
-            <button @click="router.push({name: 'Edit', params: {id: id}})" class="m-6 px-4 py-2 bg-blue-600 text-slate-100 rounded-lg">Edit Book</button>
+            <button @click="router.push({name: 'EditBook', params: {id: id}})" class="m-6 px-4 py-2 bg-blue-600 text-slate-100 rounded-lg">Edit Book</button>
             <button @click="deleteBook(book), router.push('/')" class="m-6 px-4 py-2 bg-rose-600 text-slate-100 rounded-lg">Delete Book</button>
         </div>
     </div>

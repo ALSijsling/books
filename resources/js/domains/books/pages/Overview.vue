@@ -15,7 +15,7 @@
     <div class="w-2/3 mx-auto my-10">
         <div class="grid grid-cols-6 gap-12">
             <div v-for="book in books" :key="book.id">
-                <router-link :to="{name: 'Show', params:{id: book.id}}">
+                <router-link :to="{name: 'ShowBook', params:{id: book.id}}">
                     <img src="/public/Book_image.png" />
                     <p class="my-4 font-bold text-center">{{ book.title }}</p>
                     <p>{{ book.author.name }}</p>
