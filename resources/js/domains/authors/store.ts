@@ -12,7 +12,7 @@ export const getAllAuthors = () => {
 
 //Actions
 export const fetchAllAuthors = async() => {
-    const {data} = await axios.get('api/authors');
+    const {data} = await axios.get('/api/authors');
     if (!data) return;
     return authors.value = data;
 }

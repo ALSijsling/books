@@ -1,10 +1,8 @@
 <script setup lang="ts">
-    import { onMounted, ref } from "vue";
+    import { onMounted, ref, computed } from "vue";
     import router from "../../../router/index.js";
     import { Author } from "../../authors/types";
-    import { getAllAuthors, fetchAllAuthors } from "../../authors/store";
-
-    import Dropdown from "../components/Dropdown.vue";
+    import { fetchAllAuthors, getAllAuthors } from "../../authors/store";
 
     const props = defineProps(['book', 'buttonValue']);
     const emit = defineEmits(['submitBook']);
@@ -12,7 +10,7 @@
     const book = ref({...props.book});
     const authors = ref<Array<Author>>([]);
 
-    const selected = ref();
+    const selected = computed(() => book.value.author.id);
 
     onMounted(async () => {
         await fetchAllAuthors();

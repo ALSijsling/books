@@ -30,3 +30,7 @@ export const fetchBookById = async(id: number) => {
 export const addBook = (book: Book) => {
     const {} = axios.post('/api/books', book);
 };
+
+export const updateBook = (book: Book) => {
+    const {} = axios.patch('/api/books', book);
+}

@@ -28,4 +28,15 @@ class BookController extends Controller
 
         Book::create($attributes);
     }
+
+    public function update(Request $request)
+    {
+        $book = Book::find($request[0]['id']);
+        
+        $book->author_id = $request[1]['author'];
+        $book->title = $request[0]['title'];
+        $book->slug = Str::slug($book['title']);
+
+        $book->save();
+    }
 }
