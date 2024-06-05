@@ -10,7 +10,7 @@
         <!-- Fonts -->
 
         <!-- Styles -->
-
+        <script src="https://kit.fontawesome.com/f4668b2343.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div id="app"></div>
