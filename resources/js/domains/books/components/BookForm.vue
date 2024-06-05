@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { onMounted, ref } from 'vue';
+    import { ref, onMounted } from 'vue';
     import router from '../../../router/index.js';
     import { Author } from '../../authors/types';
     import { fetchAllAuthors, getAllAuthors } from '../../authors/store';
@@ -18,8 +18,8 @@
     })
 
     const onSubmit = () => {
-        emit('submitBook', [book.value, {author: selected.value}])
-        router.push('/')
+        emit('submitBook', [book.value, {author: selected.value}]);
+        router.push('/');
     }
 </script>
 

@@ -16,3 +16,7 @@ export const fetchAllAuthors = async() => {
     if (!data) return;
     return authors.value = data;
 }
+
+export const addAuthor = (author: Author) => {
+    const {} = axios.post('/api/authors', author);
+}
