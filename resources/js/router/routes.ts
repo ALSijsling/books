@@ -6,7 +6,7 @@ import Authors from '../domains/authors/pages/Overview.vue';
 
 const routes = [
     {path: '/', name: 'Home', component: Home},
-    {path: '/create', name: 'CreateBook', component: CreateBook},
+    {path: '/books/create', name: 'CreateBook', component: CreateBook},
     {path: '/books/:id', name: 'ShowBook', component: ShowBook},
     {path: '/books/:id/edit', name: 'EditBook', component: EditBook},
     {path: '/authors', name: 'Authors', component: Authors}
