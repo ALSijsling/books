@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import BookForm from "./../components/BookForm.vue";
-    import { addBook } from "../store.ts";
+    import BookForm from '../components/BookForm.vue'
+    import { addBook } from '../store.ts';
 
     const book = {};
 </script>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
     import { useRoute } from 'vue-router';
-    import { fetchBookById, getBookById, deleteBook } from './../store';
+    import { fetchBookById, getBookById, deleteBook } from '../store';
     import router from '../../../router';
 
     const route = useRoute();

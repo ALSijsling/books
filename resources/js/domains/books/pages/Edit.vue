@@ -1,8 +1,8 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
     import { useRoute } from 'vue-router';
-    import { fetchBookById, getBookById, updateBook } from './../store';
-    import BookForm from './../components/BookForm.vue';
+    import { fetchBookById, getBookById, updateBook } from '../store';
+    import BookForm from '../components/BookForm.vue';
 
     const route = useRoute();
     const id = Number(route.params.id);

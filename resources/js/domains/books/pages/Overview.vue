@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
-    import { getAllBooks, fetchAllBooks } from './../store.ts';
-    import { Book } from './../types';
+    import { getAllBooks, fetchAllBooks } from '../store';
+    import { Book } from '../types';
 
     const books = ref<Array<Book>>([]);
 

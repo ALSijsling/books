@@ -1,8 +1,8 @@
 <script setup lang="ts">
-    import { onMounted, ref, computed } from "vue";
-    import router from "../../../router/index.js";
-    import { Author } from "../../authors/types";
-    import { fetchAllAuthors, getAllAuthors } from "../../authors/store";
+    import { onMounted, ref, computed } from 'vue';
+    import router from '../../../router/index.js';
+    import { Author } from '../../authors/types';
+    import { fetchAllAuthors, getAllAuthors } from '../../authors/store';
 
     const props = defineProps(['book', 'buttonValue']);
     const emit = defineEmits(['submitBook']);
