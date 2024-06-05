@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Author;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AuthorController extends Controller
 {
@@ -11,5 +12,13 @@ class AuthorController extends Controller
     {
         $authors = Author::all();
         return response()->json($authors);
+    }
+
+    public function store(Request $request)
+    {
+        $attributes['name'] = $request[0]['name'];
+        $attributes['slug'] = Str::slug($attributes['name']);
+
+        Author::create($attributes);
     }
 }
