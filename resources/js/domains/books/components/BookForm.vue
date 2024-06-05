@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { onMounted, ref, computed } from 'vue';
+    import { onMounted, ref } from 'vue';
     import router from '../../../router/index.js';
     import { Author } from '../../authors/types';
     import { fetchAllAuthors, getAllAuthors } from '../../authors/store';
