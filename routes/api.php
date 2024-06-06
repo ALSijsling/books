@@ -21,3 +21,4 @@ Route::get('/authors/{id}', [AuthorController::class, 'show']);
 
 Route::post('/authors', [AuthorController::class, 'store']);
 Route::patch('/authors', [AuthorController::class, 'update']);
+Route::delete('/authors', [AuthorController::class, 'destroy']);

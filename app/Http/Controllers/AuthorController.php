@@ -37,4 +37,10 @@ class AuthorController extends Controller
 
         $author->save();
     }
+
+    public function destroy(Request $request)
+    {
+        $author = Author::find($request['id']);
+        $author->delete();
+    }
 }

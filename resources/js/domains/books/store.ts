@@ -36,5 +36,5 @@ export const updateBook = (book: Book) => {
 }
 
 export const deleteBook = (book: Book) => {
-    const {} = axios.delete('/api/books', {data: book})
+    const {} = axios.delete('/api/books', {data: book});
 }

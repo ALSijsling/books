@@ -34,3 +34,7 @@ export const addAuthor = (author: Author) => {
 export const updateAuthor = (author: Author) => {
     const {} = axios.patch('/api/authors', author);
 }
+
+export const deleteAuthor = (author: Author) => {
+    const {} = axios.delete('/api/authors', {data: author});
+}
