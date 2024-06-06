@@ -10,7 +10,7 @@ class AuthorController extends Controller
 {
     public function index()
     {
-        $authors = Author::all();
+        $authors = Author::orderBy('name')->get();
         return response()->json($authors);
     }
 
