@@ -14,6 +14,12 @@ class AuthorController extends Controller
         return response()->json($authors);
     }
 
+    public function show(Request $author)
+    {
+        $author = Author::where('id', $author['id'])->get();
+        return response()->json($author[0]);
+    }
+
     public function store(Request $request)
     {
         $attributes['name'] = $request[0]['name'];

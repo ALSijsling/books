@@ -2,6 +2,7 @@
     import { ref, onMounted } from 'vue';
     import { fetchAllAuthors, getAllAuthors } from '../store';
     import { Author } from '../types';
+    import router from '../../../router';
 
     const authors = ref<Array<Author>>([]);
 
@@ -19,7 +20,7 @@
                 <p class="ml-2">{{ author.name }}</p>
             </div>
             <div class="mr-4 flex space-x-4">
-                <button class="px-4 py-2 bg-blue-600 text-slate-100 rounded-lg">Edit</button>
+                <button @click="router.push({name: 'EditAuthor', params: {id: author.id}})" class="px-4 py-2 bg-blue-600 text-slate-100 rounded-lg">Edit</button>
                 <button class="px-4 py-2 bg-red-600 text-slate-100 rounded-lg">Delete</button>
             </div>
         </div>
