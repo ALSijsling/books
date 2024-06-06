@@ -30,3 +30,7 @@ export const fetchAuthorById = async(id: number) => {
 export const addAuthor = (author: Author) => {
     const {} = axios.post('/api/authors', author);
 }
+
+export const updateAuthor = (author: Author) => {
+    const {} = axios.patch('/api/authors', author);
+}

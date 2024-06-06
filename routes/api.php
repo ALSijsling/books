@@ -20,3 +20,4 @@ Route::delete('/books', [BookController::class, 'destroy']);
 Route::get('/authors/{id}', [AuthorController::class, 'show']);
 
 Route::post('/authors', [AuthorController::class, 'store']);
+Route::patch('/authors', [AuthorController::class, 'update']);

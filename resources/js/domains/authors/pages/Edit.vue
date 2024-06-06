@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
     import { useRoute } from 'vue-router';
-    import { fetchAuthorById, getAuthorById } from '../store';
+    import { fetchAuthorById, getAuthorById, updateAuthor } from '../store';
     import AuthorForm  from '../components/AuthorForm.vue';
 
     const route = useRoute();
@@ -17,6 +17,6 @@
 
 <template>
     <div v-if="author">
-        <AuthorForm :author="author" buttonValue="Update Author"/>
+        <AuthorForm @submitAuthor="(author) => updateAuthor(author)" :author="author" buttonValue="Update Author"/>
     </div>
 </template>

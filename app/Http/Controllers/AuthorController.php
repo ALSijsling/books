@@ -27,4 +27,14 @@ class AuthorController extends Controller
 
         Author::create($attributes);
     }
+
+    public function update(Request $request)
+    {
+        $author = Author::find($request[0]['id']);
+
+        $author->name = $request[0]['name'];
+        $author->slug = Str::slug($author['name']);
+
+        $author->save();
+    }
 }
