@@ -38,6 +38,7 @@
                 </div>
                 <p class="">{{ review.content }}</p>
             </div>
+            <button @click="router.push({name: 'CreateReview'})" class="px-4 py-2 bg-orange-600 text-slate-100 rounded-lg">Add Review</button>
         </div>
     </div>
 </template>
