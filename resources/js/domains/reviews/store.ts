@@ -30,3 +30,7 @@ export const fetchReviewById = async(id: number) => {
 export const addReview = (review: Review) => {
     const {} = axios.post('/api/reviews', review);
 }
+
+export const updateReview = (review: Review) => {
+    const {} = axios.patch('/api/reviews', review);
+}

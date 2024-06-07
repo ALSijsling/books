@@ -26,3 +26,4 @@ Route::patch('/authors', [AuthorController::class, 'update']);
 Route::delete('/authors', [AuthorController::class, 'destroy']);
 
 Route::post('/reviews', [ReviewController::class, 'store']);
+Route::patch('/reviews', [ReviewController::class, 'update']);

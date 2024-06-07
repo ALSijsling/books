@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
     import { useRoute } from 'vue-router';
-    import { fetchReviewById, getReviewById } from '../store';
+    import { fetchReviewById, getReviewById, updateReview } from '../store';
     import ReviewForm from '../components/ReviewForm.vue';
 
     const route = useRoute();
@@ -17,6 +17,6 @@
 
 <template>
     <div v-if="review">
-        <ReviewForm :review="review" buttonValue="Update Review" />
+        <ReviewForm @submitReview="(review) => updateReview(review)" :review="review" buttonValue="Update Review" />
     </div>
 </template>

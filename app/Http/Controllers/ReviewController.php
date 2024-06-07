@@ -28,4 +28,13 @@ class ReviewController extends Controller
 
         Review::create($attributes);
     }
+
+    public function update(Request $request)
+    {
+        $review = Review::find($request[0]['id']);
+
+        $review->content = $request[0]['content'];
+
+        $review->save();
+    }
 }
