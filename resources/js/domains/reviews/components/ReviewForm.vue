@@ -5,12 +5,18 @@
     import router from '../../../router/index.js';
 
     const props = defineProps(['review', 'buttonValue']);
+    const emit = defineEmits(['submitReview']);
 
     const route = useRoute();
     const book_id = Number(route.params.id);
 
     const review = ref({...props.review});
     const book = ref();
+
+    const onSubmit = () => {
+        emit('submitReview', [review.value, book.value.id]);
+        router.push('/');
+    }
 
     onMounted(async () => {
         await fetchBookById(book_id);
@@ -21,7 +27,7 @@
 <template>
     <div class="w-1/3 mx-auto bg-gray-300 rounded-md">
         <p v-if="book" class="w-2/3 my-4 p-4 mx-auto">Review for <span class="font-bold">{{ book.title }}</span></p>
-        <form>
+        <form @submit.prevent="onSubmit">
             <div class="w-2/3 my-4 p-4 mx-auto">
                 <textarea v-model="review.content" id="content" rows="8" class="border-slate-500 border-solid rounded-md pl-2 py-2 w-full" required></textarea>
             </div>
