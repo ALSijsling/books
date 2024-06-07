@@ -16,3 +16,7 @@ export const fetchReviewsByBook = async(id: number) => {
     if (!data) return;
     return reviews.value = data;
 }
+
+export const addReview = (review: Review) => {
+    const {} = axios.post('/api/reviews', review);
+}
