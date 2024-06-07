@@ -34,3 +34,7 @@ export const addReview = (review: Review) => {
 export const updateReview = (review: Review) => {
     const {} = axios.patch('/api/reviews', review);
 }
+
+export const deleteReview = (review: Review) => {
+    const {} = axios.delete('/api/reviews', {data: review});
+}

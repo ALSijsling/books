@@ -2,7 +2,7 @@
     import { ref, onMounted } from 'vue';
     import { useRoute } from 'vue-router';
     import { fetchBookById, getBookById, deleteBook } from '../store';
-    import { fetchReviewsByBook, getReviewsByBook } from '../../reviews/store';
+    import { fetchReviewsByBook, getReviewsByBook, deleteReview } from '../../reviews/store';
     import router from '../../../router';
 
     const route = useRoute();
@@ -39,7 +39,7 @@
                 <p class="">{{ review.content }}</p>
                 <div class="mr-4 my-4 flex space-x-4 justify-end">
                     <button @click="router.push({name: 'EditReview', params: {book_id: book.id, id: review.id}})" class="px-4 py-1 bg-blue-600 text-slate-100 rounded-lg">Edit</button>
-                    <button @click="router.go(0)" class="px-4 py-1 bg-red-600 text-slate-100 rounded-lg">Delete</button>
+                    <button @click="deleteReview(review), router.go(0)" class="px-4 py-1 bg-red-600 text-slate-100 rounded-lg">Delete</button>
                 </div>
             </div>
             <button @click="router.push({name: 'CreateReview', params: {book_id: book.id}})" class="px-4 py-2 bg-orange-600 text-slate-100 rounded-lg">Add Review</button>

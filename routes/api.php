@@ -27,3 +27,4 @@ Route::delete('/authors', [AuthorController::class, 'destroy']);
 
 Route::post('/reviews', [ReviewController::class, 'store']);
 Route::patch('/reviews', [ReviewController::class, 'update']);
+Route::delete('/reviews', [ReviewController::class, 'destroy']);

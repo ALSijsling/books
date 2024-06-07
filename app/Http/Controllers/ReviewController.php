@@ -37,4 +37,10 @@ class ReviewController extends Controller
 
         $review->save();
     }
+
+    public function destroy(Request $request)
+    {
+        $review = Review::find($request['id']);
+        $review->delete();
+    }
 }
