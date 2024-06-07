@@ -21,7 +21,7 @@
             </div>
             <div class="mr-4 flex space-x-4">
                 <button @click="router.push({name: 'EditAuthor', params: {id: author.id}})" class="px-4 py-2 bg-blue-600 text-slate-100 rounded-lg">Edit</button>
-                <button @click="deleteAuthor(author), router.push('/')" class="px-4 py-2 bg-red-600 text-slate-100 rounded-lg">Delete</button>
+                <button @click="deleteAuthor(author), router.go(0)" class="px-4 py-2 bg-red-600 text-slate-100 rounded-lg">Delete</button>
             </div>
         </div>
     </div>
