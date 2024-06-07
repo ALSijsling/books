@@ -10,9 +10,19 @@ export const getReviewsByBook = () => {
     return reviews.value;
 }
 
+export const getReviewById = () => {
+    return reviews.value;
+}
+
 //Actions
 export const fetchReviewsByBook = async(id: number) => {
     const {data} = await axios.get(`/api/books/${id}/reviews`);
+    if (!data) return;
+    return reviews.value = data;
+}
+
+export const fetchReviewById = async(id: number) => {
+    const {data} = await axios.get(`/api/reviews/${id}`);
     if (!data) return;
     return reviews.value = data;
 }

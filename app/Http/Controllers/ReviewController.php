@@ -14,6 +14,12 @@ class ReviewController extends Controller
         return response()->json($reviews);
     }
 
+    public function show(Request $review)
+    {
+        $review = Review::where('id', $review['id'])->with('book')->get();
+        return response()->json($review[0]);
+    }
+
     public function store(Request $request)
     {
         $attributes['book_id'] = $request[1];

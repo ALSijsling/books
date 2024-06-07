@@ -6,6 +6,7 @@ import Authors from '../domains/authors/pages/Overview.vue';
 import CreateAuthor from '../domains/authors/pages/Create.vue';
 import EditAuthor from '../domains/authors/pages/Edit.vue';
 import CreateReview from '../domains/reviews/pages/Create.vue';
+import EditReview from '../domains/reviews/pages/Edit.vue';
 
 const routes = [
     {path: '/', name: 'Home', component: Home},
@@ -15,7 +16,8 @@ const routes = [
     {path: '/authors', name: 'Authors', component: Authors},
     {path: '/authors/create', name: 'CreateAuthor', component: CreateAuthor},
     {path: '/authors/:id/edit', name: 'EditAuthor', component: EditAuthor},
-    {path: '/books/:id/review/create', name: 'CreateReview', component: CreateReview}
+    {path: '/books/:book_id/reviews/create', name: 'CreateReview', component: CreateReview},
+    {path: '/books/:book_id/reviews/:id/edit', name: 'EditReview', component: EditReview}
 ];
 
 export default routes;

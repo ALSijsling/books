@@ -8,7 +8,7 @@
     const emit = defineEmits(['submitReview']);
 
     const route = useRoute();
-    const book_id = Number(route.params.id);
+    const book_id = Number(route.params.book_id);
 
     const review = ref({...props.review});
     const book = ref();

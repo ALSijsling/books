@@ -31,14 +31,18 @@
         <div class="w-1/2 mx-auto">
             <h1 class="font-bold text-xl">Reviews for <i>{{ book.title }}</i></h1>
             <div v-for="review in reviews" :key="review.id"
-                    class="my-4 bg-gray-300 rounded-lg">
+                    class="my-4 p-2 bg-gray-300 rounded-lg">
                 <div class="flex place-items-center">
                     <i class="ml-2 fa-solid fa-circle-user"></i>
                     <p class="pl-2 font-bold">{{ review.user.name }}</p>
                 </div>
                 <p class="">{{ review.content }}</p>
+                <div class="mr-4 my-4 flex space-x-4 justify-end">
+                    <button @click="router.push({name: 'EditReview', params: {book_id: book.id, id: review.id}})" class="px-4 py-1 bg-blue-600 text-slate-100 rounded-lg">Edit</button>
+                    <button @click="router.go(0)" class="px-4 py-1 bg-red-600 text-slate-100 rounded-lg">Delete</button>
+                </div>
             </div>
-            <button @click="router.push({name: 'CreateReview'})" class="px-4 py-2 bg-orange-600 text-slate-100 rounded-lg">Add Review</button>
+            <button @click="router.push({name: 'CreateReview', params: {book_id: book.id}})" class="px-4 py-2 bg-orange-600 text-slate-100 rounded-lg">Add Review</button>
         </div>
     </div>
 </template>
