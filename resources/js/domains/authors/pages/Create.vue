@@ -1,8 +1,10 @@
 <script setup lang="ts">
     import AuthorForm from '../components/AuthorForm.vue';
     import { addAuthor } from '../store';
+import { ref } from 'vue';
 
-    const author = {};
+    // TODO: author reactive maken
+    const author = ref({});
 </script>
 
 <template>

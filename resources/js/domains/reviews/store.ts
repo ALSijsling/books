@@ -10,11 +10,13 @@ export const getReviewsByBook = () => {
     return reviews.value;
 }
 
+// TODO: functienaam impliceert dat je via een id de review opvraagt
 export const getReviewById = () => {
     return reviews.value;
 }
 
 //Actions
+// TODO: bookId is duidelijker dan id
 export const fetchReviewsByBook = async(id: number) => {
     const {data} = await axios.get(`/api/books/${id}/reviews`);
     if (!data) return;
