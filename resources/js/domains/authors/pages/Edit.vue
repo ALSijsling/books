@@ -5,21 +5,18 @@
     import AuthorForm  from '../components/AuthorForm.vue';
 
 const route = useRoute();
-    // TODO: authorId is betere naam
-    const id = Number(route.params.id);
+    const authorId = Number(route.params.id);
 
     const author = ref();
 
     onMounted(async () => {
-        await fetchAuthorById(id);
+        await fetchAuthorById(authorId);
         author.value = getAuthorById();
     })
 </script>
 
 <template>
     <div v-if="author">
-        <!-- TODO: eventhandler voor updateAuthor in deze Edit pagina zetten ipv in de form,
-        zodat form breder inzetbaar is -->
         <AuthorForm @submitAuthor="(author) => updateAuthor(author)" :author="author" buttonValue="Update Author"/>
     </div>
 </template>

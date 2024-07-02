@@ -16,14 +16,12 @@ class AuthorController extends Controller
 
     public function show(Request $author)
     {
-        // TODO: pas route-model binding toe
         $author = Author::where('id', $author['id'])->get();
         return response()->json($author[0]);
     }
 
     public function store(Request $request)
     {
-        // TODO: pas validation toe
         $attributes['name'] = $request[0]['name'];
         $attributes['slug'] = Str::slug($attributes['name']);
 
